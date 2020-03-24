@@ -23,9 +23,9 @@ def solve(index):
     gain = rentals[index][2]
 
     if compatible(index - 1, index):
-        return gain + results[index - 1]
+        return gain + results[index]
     else:
-        return max([gain + results[search(index) + 1], results[index - 1]])
+        return max([gain + results[search(index) + 1], results[index]])
 
 def fillList():
     results.append(0)
@@ -38,7 +38,6 @@ nIterations = int(input())
 
 for i in range(nIterations):
     rentals = buildDrones(int(input()))
-    print(rentals)
     results = []
     fillList()
     print(results[len(results) - 1])

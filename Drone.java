@@ -35,9 +35,9 @@ public class Drone {
         int gain = this.rentals[index].getPrice();
 
         if(this.compatible(index - 1, index))
-            return gain + this.results[index - 1];
+            return gain + this.results[index];
         else
-            return Math.max(gain + this.results[search(index) + 1], this.results[index - 1]);
+            return Math.max(gain + this.results[search(index) + 1], this.results[index]);
     }
 
     public int fillList(){
